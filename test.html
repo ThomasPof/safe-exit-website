@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <button class="btn-exit">
+      EXIT MODE
+    </button>
+
+    <script>
+    var btnExit = document.querySelectorAll(".btn-exit");
+    var targetUrl = "https://galerieblanche.com/";
+    var targetTitle = "NOUVEAU TITRE !";
+
+    for (var i = 0; i < btnExit.length; i++) {
+      btnExit[i].addEventListener('click', function(event) {
+        event.preventDefault();
+        document.getElementsByTagName('head')[0].innerHTML = '<title>'+targetTitle+'</title>';
+        document.getElementsByTagName('body')[0].innerHTML = '<iframe style="border:0;width:100vw;height:100vh;position:absolute;top:0;left:0;z-index:99999999" src="'+targetUrl+'"></iframe>';
+      }, false);
+    }
+    </script>
+  </body>
+</html>
